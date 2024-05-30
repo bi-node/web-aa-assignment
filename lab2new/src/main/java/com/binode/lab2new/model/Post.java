@@ -12,7 +12,7 @@ public class Post {
     String content;
     String author;
 
-    @Column(name = "user_id")
+   // @Column(name = "user_id")
     private Long user_id;
 
 

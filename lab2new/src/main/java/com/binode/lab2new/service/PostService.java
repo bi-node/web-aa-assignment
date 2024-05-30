@@ -7,6 +7,8 @@ import java.util.List;
 public interface PostService {
     public void save(PostDto post);
     public List<PostDto> getAll();
+    public PostDto getById(long id);
+
 
 
 }

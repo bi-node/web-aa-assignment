@@ -1,6 +1,7 @@
 package com.binode.lab2new.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.BatchSize;
 
 import java.util.List;
 @Entity
@@ -11,7 +12,7 @@ public class User {
     private long id;
     String name;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     List<Post> posts ;
 

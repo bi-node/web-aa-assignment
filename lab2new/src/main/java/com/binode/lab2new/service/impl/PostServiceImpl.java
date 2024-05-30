@@ -40,12 +40,12 @@ public class PostServiceImpl implements PostService {
 
     }
 
-//    @Override
-//    public PostDto getById(long id) {
-//        Post post=postRepository.findById(id);
-//        PostDto postEntity = modelMapper.map(post, PostDto.class);
-//        return postEntity;
-//    }
+    @Override
+    public PostDto getById(long id) {
+        Post post=postRepository.findById(id).orElse(null);
+        PostDto postEntity = modelMapper.map(post, PostDto.class);
+        return postEntity;
+    }
 //
 //    @Override
 //    public void update(long id, PostDto postDto) {
