@@ -11,5 +11,6 @@ public interface UserService {
     public List<UserDto> getAllUser();
     public void insertUser(UserDto userDto);
     public UserDto getUserById(long id);
+    public List<PostDto> getAllPostsByUserId(long id);
 
 }

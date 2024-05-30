@@ -40,9 +40,9 @@ public class UserController {
 
     }
 //    d.	GET	localhost:8080/users/1/posts	 This should retrieve the posts of the user where id = 1.
-//    @GetMapping("/{id}/posts")
-//    public List<PostDto> findUserPosts(@PathVariable Long id) {
-//       return userService.getAllPostByUser(id);
-//    }
+    @GetMapping("/{id}/posts")
+    public List<PostDto> findUserPosts(@PathVariable Long id) {
+       return userService.getAllPostsByUserId(id);
+    }
 
 }
