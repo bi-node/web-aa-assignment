@@ -12,7 +12,11 @@ public class Post {
     String content;
     String author;
 
+<<<<<<< HEAD
    // @Column(name = "user_id")
+=======
+    @Column(name = "user_id")
+>>>>>>> b71ff7925f82672f2f51e1fc8e86e5d7cfddfe57
     private Long user_id;
 
 

@@ -66,6 +66,7 @@ public class UserServiceImpl implements UserService {
 
     public List<PostDto> getAllPostsByUserId(long id)
     {
+<<<<<<< HEAD
         List<Post> listofPosts=userRepository.findById(id).get().getPosts();
         List<PostDto> postDtos=new ArrayList<>();
         for(Post post:listofPosts)
@@ -74,6 +75,15 @@ public class UserServiceImpl implements UserService {
         }
 
         return postDtos;
+=======
+        List<Post> listofPosts=postRepository.findAllPostsByUserId(id);
+        List<PostDto> postDtoList=new ArrayList<>();
+        for(Post post:listofPosts)
+        {
+            postDtoList.add(modelMapper.map(post,PostDto.class));
+        }
+        return postDtoList;
+>>>>>>> b71ff7925f82672f2f51e1fc8e86e5d7cfddfe57
     }
 
 
