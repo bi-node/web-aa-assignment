@@ -12,6 +12,9 @@ public class Post {
     String content;
     String author;
 
+    @Column(name = "user_id")
+    private Long user_id;
+
 
     public Post(){}
     public Post(long id, String title, String content, String author) {
