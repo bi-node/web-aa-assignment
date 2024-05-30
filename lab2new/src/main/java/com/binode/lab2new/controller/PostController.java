@@ -23,16 +23,16 @@ public class PostController {
 //        return  postService.getById(id);
 //    }
 
-//    @GetMapping("/authors")
-//    public List<PostDto> getPostByAuthor(@RequestParam("author") String author) {
-//        return postService.searchByAuthor(author);
-//    }
+    @GetMapping("/authors")
+    public List<PostDto> getPostByAuthor(@RequestParam("author") String author) {
+        return postService.searchByAuthor(author);
+    }
 
-//    @GetMapping("/search")
-//    public List<PostDto> searchBytext(@RequestParam("text") String text) {
-//        return postService.searchByAuthor(text);
-//    }
-//
+    @GetMapping("/search")
+    public List<PostDto> searchBytext(@RequestParam("text") String text) {
+        return postService.searchByAuthorLetter(text);
+    }
+
 
 
     @PostMapping
@@ -40,17 +40,17 @@ public class PostController {
         postService.save(postDto);
         return "Post created";
     }
-//    @PutMapping("/{id}")
-//    public String updatePost(@PathVariable long id,@RequestBody PostDto postDto) {
-//        postService.update(id, postDto);
-//        return "Post updated";
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public String deletePost(@PathVariable long id) {
-//        postService.deleteById(id);
-//        return "Post deleted";
-//    }
+    @PutMapping("/{id}")
+    public String updatePost(@PathVariable long id,@RequestBody PostDto postDto) {
+        postService.update(id, postDto);
+        return "Post updated";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletePost(@PathVariable long id) {
+        postService.deleteById(id);
+        return "Post deleted";
+    }
 
 
 
