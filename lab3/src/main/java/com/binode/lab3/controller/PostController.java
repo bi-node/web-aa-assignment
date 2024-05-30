@@ -52,6 +52,9 @@ public class PostController {
         return "Post deleted";
     }
 
+    //find all posts that matches given title
+
+
 
 
 

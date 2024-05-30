@@ -94,4 +94,9 @@ public class PostServiceImpl implements PostService {
 
         return list;
     }
+
+    @Override
+    public List<PostDto> searchByTitle(String title) {
+        return List.of();
+    }
 }

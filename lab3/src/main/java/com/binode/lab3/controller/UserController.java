@@ -52,4 +52,11 @@ public class UserController {
         return "User with id " + id + " deleted";
     }
 
+    //diplays list of user with "N" posts
+    @GetMapping("/npost")
+    public List<UserDto> diplayUsersWithMorePost(@RequestParam(name="noOfPost") int n) {
+        return userService.userWithNPosts(n);
+
+    }
+
 }

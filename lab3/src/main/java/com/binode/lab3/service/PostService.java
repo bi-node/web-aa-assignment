@@ -12,5 +12,6 @@ public interface PostService {
     public void deleteById(long id);
     public List<PostDto> searchByAuthor(String author);
     public List<PostDto> searchByAuthorLetter(String text);
+    public List<PostDto> searchByTitle(String title);
 }
 

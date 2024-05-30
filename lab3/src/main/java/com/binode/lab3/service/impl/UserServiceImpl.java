@@ -81,5 +81,22 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public List<UserDto> userWithNPosts(int n) {
+        List<User> userList=new ArrayList<>();
+      userRepository.findAll().forEach(user->{
+            List<Post> listofPost=user.getPosts();
+            if(listofPost.size()>=n)
+                userList.add(user);
+        });
+
+      List<UserDto> usersDtoList=new ArrayList<>();
+      for(User user:userList)
+      {
+          usersDtoList.add(modelMapper.map(user,UserDto.class));
+      }
+        return usersDtoList;
+    }
+
 
 }
