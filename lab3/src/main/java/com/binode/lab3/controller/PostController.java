@@ -53,6 +53,10 @@ public class PostController {
     }
 
     //find all posts that matches given title
+    @GetMapping("/titlesearch")
+    public List<PostDto> getPostwithMatchingTitle(@RequestParam("title") String title) {
+        return postService.searchByTitle(title);
+    }
 
 
 
