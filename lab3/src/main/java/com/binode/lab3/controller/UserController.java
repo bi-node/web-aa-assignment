@@ -52,10 +52,16 @@ public class UserController {
         return "User with id " + id + " deleted";
     }
 
-    //diplays list of user with "N" posts
-    @GetMapping("/npost")
-    public List<UserDto> diplayUsersWithMorePost(@RequestParam(name="noOfPost") int n) {
+    // Display list of users with "N" posts
+    @GetMapping(value = "/npost", params = {"noOfPost"})
+    public List<UserDto> displayUsersWithMorePosts(@RequestParam(name = "noOfPost") int n) {
         return userService.userWithNPosts(n);
+    }
+
+    // Display list of users with posts that have a given title
+    @GetMapping(value = "/npost", params = {"titleOfPost"})
+    public List<UserDto> displayUsersWithGivenTitlePost(@RequestParam(name = "titleOfPost") String title) {
+        return userService.userWithTitlePost(title);
 
     }
 

@@ -53,24 +53,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void insertUser(UserDto userDto) {
-        User user=modelMapper.map(userDto, User.class);
+        User user = modelMapper.map(userDto, User.class);
         userRepository.save(user);
     }
 
     @Override
     public UserDto getUserById(long id) {
-        User user=userRepository.findById(id).orElse(null);
-        return modelMapper.map(user,UserDto.class);
+        User user = userRepository.findById(id).orElse(null);
+        return modelMapper.map(user, UserDto.class);
 
     }
 
-    public List<PostDto> getAllPostsByUserId(long id)
-    {
-        List<Post> listofPosts=userRepository.findById(id).get().getPosts();
-        List<PostDto> postDtos=new ArrayList<>();
-        for(Post post:listofPosts)
-        {
-            postDtos.add(modelMapper.map(post,PostDto.class));
+    public List<PostDto> getAllPostsByUserId(long id) {
+        List<Post> listofPosts = userRepository.findById(id).get().getPosts();
+        List<PostDto> postDtos = new ArrayList<>();
+        for (Post post : listofPosts) {
+            postDtos.add(modelMapper.map(post, PostDto.class));
         }
 
         return postDtos;
@@ -83,18 +81,38 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> userWithNPosts(int n) {
-        List<User> userList=new ArrayList<>();
-      userRepository.findAll().forEach(user->{
-            List<Post> listofPost=user.getPosts();
-            if(listofPost.size()>=n)
+        List<User> userList = new ArrayList<>();
+        userRepository.findAll().forEach(user -> {
+            List<Post> listofPost = user.getPosts();
+            if (listofPost.size() >= n)
                 userList.add(user);
         });
 
-      List<UserDto> usersDtoList=new ArrayList<>();
-      for(User user:userList)
-      {
-          usersDtoList.add(modelMapper.map(user,UserDto.class));
-      }
+        List<UserDto> usersDtoList = new ArrayList<>();
+        for (User user : userList) {
+            usersDtoList.add(modelMapper.map(user, UserDto.class));
+        }
+        return usersDtoList;
+    }
+
+    @Override
+    public List<UserDto> userWithTitlePost(String title) {
+        List<User> userList = new ArrayList<>();
+        userRepository.findAll().forEach(user -> {
+            List<Post> listofPost = user.getPosts();
+            for (Post post : listofPost) {
+                if (post.getTitle().contains(title))
+                {
+                    userList.add(user);
+                    break;
+                }
+
+            }
+        });
+        List<UserDto> usersDtoList = new ArrayList<>();
+        for (User user : userList) {
+            usersDtoList.add(modelMapper.map(user, UserDto.class));
+        }
         return usersDtoList;
     }
 

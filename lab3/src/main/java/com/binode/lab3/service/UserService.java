@@ -14,5 +14,6 @@ public interface UserService {
     public List<PostDto> getAllPostsByUserId(long id);
     public void deleteUser(long id);
     public List<UserDto> userWithNPosts(int n);
+    public List<UserDto> userWithTitlePost(String title);
 
 }
