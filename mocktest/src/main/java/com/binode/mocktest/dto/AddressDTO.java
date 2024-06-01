@@ -1,29 +1,27 @@
 package com.binode.mocktest.dto;
 
-
-
 public class AddressDTO {
-    private long address_id;
+    private Long addressId;
     private String city;
     private String state;
     private String zipcode;
 
-    public AddressDTO(long address_id, String city, String state, String zipcode) {
-        this.address_id = address_id;
+    public AddressDTO() {
+    }
+
+    public AddressDTO(Long addressId, String city, String state, String zipcode) {
+        this.addressId = addressId;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
     }
 
-    public AddressDTO() {
+    public Long getAddressId() {
+        return addressId;
     }
 
-    public long getAddress_id() {
-        return address_id;
-    }
-
-    public void setAddress_id(long address_id) {
-        this.address_id = address_id;
+    public void setAddressId(Long addressId) {
+        this.addressId = addressId;
     }
 
     public String getCity() {

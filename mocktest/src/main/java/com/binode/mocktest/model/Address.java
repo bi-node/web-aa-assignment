@@ -2,35 +2,36 @@ package com.binode.mocktest.model;
 
 import jakarta.persistence.*;
 
-
+import java.util.List;
 
 @Entity
-@Table(name="address")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long address_id;
+    private Long addressId;
     private String city;
     private String state;
     private String zipcode;
 
+    @OneToMany(mappedBy = "address")
+    private List<Student> students;
+
     public Address() {
     }
 
-    public Address(long address_id, String city, String state, String zipcode, Student student) {
-        this.address_id = address_id;
+    public Address(Long addressId, String city, String state, String zipcode, List<Student> students) {
+        this.addressId = addressId;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-
+        this.students = students;
     }
 
-    public long getAddress_id() {
-        return address_id;
+    public Long getAddressId() {
+        return addressId;
     }
 
-    public void setAddress_id(long address_id) {
-        this.address_id = address_id;
+    public void setAddressId(Long addressId) {
+        this.addressId = addressId;
     }
 
     public String getCity() {
@@ -57,13 +58,11 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "address_id=" + address_id +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipcode='" + zipcode + '\'' +
-                '}';
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

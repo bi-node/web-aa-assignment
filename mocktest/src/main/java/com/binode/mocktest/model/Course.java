@@ -3,59 +3,59 @@ package com.binode.mocktest.model;
 import jakarta.persistence.*;
 import java.util.List;
 
+
 @Entity
-@Table(name="course")
 public class Course {
     @Id
-    private long course_id;
-    private String course_name;
+    private Long courseId;
+    private String name;
 
-    @ManyToMany(mappedBy = "enrolledCourses")
-    private List<Student> students;
+    @OneToMany(mappedBy = "course")
+    private List<StudentCourse> studentCourses;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "course")
-    private Course_Details courseDetails;
+    @OneToOne(mappedBy = "course")
+    private CourseDetails courseDetails;
 
     public Course() {
     }
 
-    public Course(long course_id, String course_name, List<Student> students, Course_Details courseDetails) {
-        this.course_id = course_id;
-        this.course_name = course_name;
-        this.students = students;
+    public Course(Long courseId, String name, List<StudentCourse> studentCourses, CourseDetails courseDetails) {
+        this.courseId = courseId;
+        this.name = name;
+        this.studentCourses = studentCourses;
         this.courseDetails = courseDetails;
     }
 
-    public long getCourse_id() {
-        return course_id;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(long course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
-    public String getCourse_name() {
-        return course_name;
+    public String getName() {
+        return name;
     }
 
-    public void setCourse_name(String course_name) {
-        this.course_name = course_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public List<StudentCourse> getStudentCourses() {
+        return studentCourses;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setStudentCourses(List<StudentCourse> studentCourses) {
+        this.studentCourses = studentCourses;
     }
 
-    public Course_Details getCourseDetails() {
+    public CourseDetails getCourseDetails() {
         return courseDetails;
     }
 
-    public void setCourseDetails(Course_Details courseDetails) {
+    public void setCourseDetails(CourseDetails courseDetails) {
         this.courseDetails = courseDetails;
     }
-    // getters and setters
 }
+

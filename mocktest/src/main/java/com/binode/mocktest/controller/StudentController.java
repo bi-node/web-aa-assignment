@@ -34,12 +34,7 @@ public class StudentController {
         return studentService.getStudentById(id);
     }
 
-    @PutMapping("/{id}")
-    public String updateStudent(@PathVariable long id, @RequestBody StudentDTO studentDTO) {
-        studentDTO.setId(id);
-        studentService.updateStudent(studentDTO);
-        return "Student updated successfully";
-    }
+
 
     @DeleteMapping("/{id}")
     public String deleteStudent(@PathVariable long id) {

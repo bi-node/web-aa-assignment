@@ -1,33 +1,31 @@
 package com.binode.mocktest.dto;
 
-
 import java.util.List;
 
 public class StudentDTO {
-    private long id;
+    private Long studentId;
     private String name;
     private double gpa;
     private AddressDTO address;
-    private List<CourseDTO> enrolledCourses;
+    private List<StudentCourseDTO> studentCourses;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(long id, String name, double gpa, AddressDTO address, List<CourseDTO> enrolledCourses) {
-        this.id = id;
+    public StudentDTO(Long studentId, String name, double gpa, AddressDTO address, List<StudentCourseDTO> studentCourses) {
+        this.studentId = studentId;
         this.name = name;
         this.gpa = gpa;
         this.address = address;
-        this.enrolledCourses = enrolledCourses;
-    }
-// Getters and Setters
-
-    public long getId() {
-        return id;
+        this.studentCourses = studentCourses;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -54,11 +52,11 @@ public class StudentDTO {
         this.address = address;
     }
 
-    public List<CourseDTO> getEnrolledCourses() {
-        return enrolledCourses;
+    public List<StudentCourseDTO> getStudentCourses() {
+        return studentCourses;
     }
 
-    public void setEnrolledCourses(List<CourseDTO> enrolledCourses) {
-        this.enrolledCourses = enrolledCourses;
+    public void setStudentCourses(List<StudentCourseDTO> studentCourses) {
+        this.studentCourses = studentCourses;
     }
 }

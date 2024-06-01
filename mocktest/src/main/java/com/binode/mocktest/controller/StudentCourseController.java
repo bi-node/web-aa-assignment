@@ -1,2 +1,4 @@
-package com.binode.mocktest.controller;public class StudentCourseController {
+package com.binode.mocktest.controller;
+
+public class StudentCourseController {
 }
