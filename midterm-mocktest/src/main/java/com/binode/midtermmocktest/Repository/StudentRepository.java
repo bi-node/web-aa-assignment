@@ -1,2 +1,9 @@
-package com.binode.midtermmocktest.Repository;public class StudentRepository {
+package com.binode.midtermmocktest.Repository;
+
+import com.binode.midtermmocktest.model.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long> {
 }
