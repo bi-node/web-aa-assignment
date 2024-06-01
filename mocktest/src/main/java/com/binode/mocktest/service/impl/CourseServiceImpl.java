@@ -2,7 +2,7 @@ package com.binode.mocktest.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.binode.mocktest.Repository.CourseRepository;
+import com.binode.mocktest.repository.CourseRepository;
 import com.binode.mocktest.dto.CourseDTO;
 import com.binode.mocktest.model.Course;
 import org.modelmapper.ModelMapper;

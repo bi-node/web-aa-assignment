@@ -1,4 +1,4 @@
-package com.binode.mocktest.Repository;
+package com.binode.mocktest.repository;
 
 
 import com.binode.mocktest.model.Course_Details;

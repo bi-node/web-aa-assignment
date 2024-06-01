@@ -24,8 +24,6 @@ public class Address {
         this.zipcode = zipcode;
 
     }
-// getters and setters
-
 
     public long getAddress_id() {
         return address_id;
@@ -59,5 +57,13 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-
+    @Override
+    public String toString() {
+        return "Address{" +
+                "address_id=" + address_id +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                '}';
+    }
 }

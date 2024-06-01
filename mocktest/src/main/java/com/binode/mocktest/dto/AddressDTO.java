@@ -8,16 +8,15 @@ public class AddressDTO {
     private String state;
     private String zipcode;
 
-    public AddressDTO() {
-    }
-
     public AddressDTO(long address_id, String city, String state, String zipcode) {
         this.address_id = address_id;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
     }
-// Getters and Setters
+
+    public AddressDTO() {
+    }
 
     public long getAddress_id() {
         return address_id;

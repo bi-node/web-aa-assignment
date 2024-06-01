@@ -3,9 +3,8 @@ package com.binode.mocktest.controller;
 import com.binode.mocktest.dto.AddressDTO;
 import com.binode.mocktest.model.Address;
 import com.binode.mocktest.service.AddressService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,6 +13,7 @@ import java.util.List;
 public class AddressController {
     AddressService addressService;
 
+    @Autowired
     public AddressController(AddressService addressService) {
         this.addressService = addressService;
     }
@@ -21,6 +21,12 @@ public class AddressController {
     @GetMapping
     public List<AddressDTO> getAllAddress() {
        return addressService.getAddresses();
+    }
+
+    @PostMapping
+    public String insertAddress(@RequestBody AddressDTO addressDTO) {
+        addressService.addAddress(addressDTO);
+        return "success";
     }
 
 }

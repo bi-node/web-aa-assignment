@@ -1,6 +1,6 @@
 package com.binode.mocktest.service.impl;
 
-import com.binode.mocktest.Repository.StudentRepository;
+import com.binode.mocktest.repository.StudentRepository;
 import com.binode.mocktest.dto.StudentDTO;
 import com.binode.mocktest.model.Student;
 import org.modelmapper.ModelMapper;

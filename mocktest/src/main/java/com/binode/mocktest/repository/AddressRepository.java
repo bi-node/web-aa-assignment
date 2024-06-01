@@ -1,4 +1,4 @@
-package com.binode.mocktest.Repository;
+package com.binode.mocktest.repository;
 
 
 
