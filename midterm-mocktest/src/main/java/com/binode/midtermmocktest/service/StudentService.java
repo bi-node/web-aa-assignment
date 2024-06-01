@@ -1,8 +1,8 @@
-package com.binode.mocktest.service;
+package service;
 
-import com.binode.mocktest.dto.StudentDTO;
-import com.binode.mocktest.model.Course;
-import com.binode.mocktest.model.Student;
+import com.binode.midtermmocktest.dto.StudentDTO;
+import com.binode.midtermmocktest.model.Course;
+import com.binode.midtermmocktest.model.Student;
 
 import java.util.List;
 

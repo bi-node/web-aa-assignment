@@ -1,6 +1,6 @@
-package com.binode.mocktest.service;
+package service;
 
-import com.binode.mocktest.dto.CourseDTO;
+import com.binode.midtermmocktest.dto.CourseDTO;
 
 import java.util.List;
 

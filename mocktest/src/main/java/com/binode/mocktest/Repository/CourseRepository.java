@@ -1,6 +1,6 @@
-package com.binode.midtermmocktest.Repository;
+package com.binode.mocktest.Repository;
 
-import com.binode.midtermmocktest.model.Course;
+import com.binode.mocktest.model.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -2,6 +2,8 @@ package com.binode.midtermmocktest.model;
 
 import jakarta.persistence.*;
 
+import javax.persistence.*;
+
 @Entity
 @Table(name="address")
 public class Address {

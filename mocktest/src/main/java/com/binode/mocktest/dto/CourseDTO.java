@@ -1,4 +1,4 @@
-package com.binode.midtermmocktest.dto;
+package com.binode.mocktest.dto;
 
 
 import java.util.List;
@@ -9,6 +9,15 @@ public class CourseDTO {
     private List<StudentDTO> students;
     private CourseDetailsDTO courseDetails;
 
+    public CourseDTO() {
+    }
+
+    public CourseDTO(long course_id, String course_name, List<StudentDTO> students, CourseDetailsDTO courseDetails) {
+        this.course_id = course_id;
+        this.course_name = course_name;
+        this.students = students;
+        this.courseDetails = courseDetails;
+    }
     // Getters and Setters
 
     public long getCourse_id() {

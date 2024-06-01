@@ -1,8 +1,8 @@
-package com.binode.midtermmocktest.model;
+package com.binode.mocktest.model;
 
 import jakarta.persistence.*;
 
-import javax.persistence.OneToOne;
+
 import java.util.List;
 
 @Entity
@@ -14,9 +14,8 @@ public class Student {
     private String name;
     private double gpa;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="id_address")
-    private Address address;
+    @JoinColumn(name="id_address", insertable = false, updatable = false)
+    private Long addressId;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -29,11 +28,11 @@ public class Student {
     public Student() {
     }
 
-    public Student(long id, String name, double gpa, Address address, List<Course> enrolledCourses) {
+    public Student(long id, String name, double gpa, Long addressId, List<Course> enrolledCourses) {
         this.id = id;
         this.name = name;
         this.gpa = gpa;
-        this.address = address;
+        this.addressId = addressId;
         this.enrolledCourses = enrolledCourses;
     }
 
@@ -61,12 +60,12 @@ public class Student {
         this.gpa = gpa;
     }
 
-    public Address getAddress() {
-        return address;
+    public Long getAddressId() {
+        return addressId;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddressId(Long addressId) {
+        this.addressId = addressId;
     }
 
     public List<Course> getEnrolledCourses() {
@@ -76,5 +75,4 @@ public class Student {
     public void setEnrolledCourses(List<Course> enrolledCourses) {
         this.enrolledCourses = enrolledCourses;
     }
-    // getters and setters
 }

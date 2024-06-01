@@ -1,4 +1,4 @@
-package com.binode.midtermmocktest.dto;
+package com.binode.mocktest.dto;
 
 
 public class CourseDetailsDTO {
@@ -8,7 +8,18 @@ public class CourseDetailsDTO {
     private String program;
     private int last_updated;
 
-    // Getters and Setters
+    public CourseDetailsDTO() {
+    }
+
+    public CourseDetailsDTO(int description_id, String course_description, int credit, String program, int last_updated) {
+        this.description_id = description_id;
+        this.course_description = course_description;
+        this.credit = credit;
+        this.program = program;
+        this.last_updated = last_updated;
+    }
+
+// Getters and Setters
 
     public int getDescription_id() {
         return description_id;

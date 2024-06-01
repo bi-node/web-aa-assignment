@@ -1,4 +1,4 @@
-package com.binode.mocktest.service;
+package service;
 
 public interface CourseDetailsService {
 }

@@ -1,6 +1,8 @@
 package com.binode.midtermmocktest.model;
 
 import jakarta.persistence.*;
+
+import javax.persistence.OneToOne;
 import java.util.List;
 
 @Entity

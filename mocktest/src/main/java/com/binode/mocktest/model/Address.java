@@ -1,8 +1,8 @@
-package com.binode.midtermmocktest.model;
+package com.binode.mocktest.model;
 
 import jakarta.persistence.*;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name="address")
@@ -14,9 +14,6 @@ public class Address {
     private String state;
     private String zipcode;
 
-    @OneToOne(mappedBy = "address")
-    private Student student;
-
     public Address() {
     }
 
@@ -25,7 +22,7 @@ public class Address {
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        this.student = student;
+
     }
 // getters and setters
 
@@ -62,11 +59,5 @@ public class Address {
         this.zipcode = zipcode;
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
+   
 }

@@ -1,17 +1,12 @@
-package service.impl;
+package com.binode.mocktest.service.impl;
 
-import com.binode.midtermmocktest.Repository.StudentRepository;
-import com.binode.midtermmocktest.dto.CourseDTO;
-import com.binode.midtermmocktest.dto.StudentDTO;
-import com.binode.midtermmocktest.model.Address;
-import com.binode.midtermmocktest.model.Course;
-import com.binode.midtermmocktest.model.Student;
+import com.binode.mocktest.Repository.StudentRepository;
+import com.binode.mocktest.dto.StudentDTO;
+import com.binode.mocktest.model.Student;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.StudentService;
-
-import java.util.ArrayList;
+import com.binode.mocktest.service.StudentService;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,18 +48,18 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public void updateStudent(StudentDTO studentDTO) {
-        Student students=modelMapper.map(studentDTO, Student.class);
-        studentRepository.findAll().stream().map(student -> {
-            student.setId(studentDTO.getId());
-            student.setName(studentDTO.getName());
-            Address address = modelMapper.map(studentDTO.getAddress(), Address.class);
-            student.setAddress(address);
-            student.setGpa(studentDTO.getGpa());
-            List<CourseDTO> enrolledClass = studentDTO.getEnrolledCourses();
-            List<Course> enrolledCourses = modelMapper.map(enrolledClass, List.class);
-            student.setEnrolledCourses(enrolledCourses);
-            return studentRepository.save(student);
-        });
+//        Student students=modelMapper.map(studentDTO, Student.class);
+//        studentRepository.findAll().stream().map(student -> {
+//            student.setId(studentDTO.getId());
+//            student.setName(studentDTO.getName());
+//            Address address = modelMapper.map(studentDTO.getAddress(), Address.class);
+//            student.setAddress(address);
+//            student.setGpa(studentDTO.getGpa());
+//            List<CourseDTO> enrolledClass = studentDTO.getEnrolledCourses();
+//            List<Course> enrolledCourses = modelMapper.map(enrolledClass, List.class);
+//            student.setEnrolledCourses(enrolledCourses);
+//            return studentRepository.save(student);
+//        });
 
     }
 

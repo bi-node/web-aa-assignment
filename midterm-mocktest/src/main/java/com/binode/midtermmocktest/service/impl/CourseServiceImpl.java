@@ -1,12 +1,12 @@
-package com.binode.mocktest.service.impl;
+package service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.binode.mocktest.Repository.CourseRepository;
-import com.binode.mocktest.dto.CourseDTO;
-import com.binode.mocktest.model.Course;
+import com.binode.midtermmocktest.Repository.CourseRepository;
+import com.binode.midtermmocktest.dto.CourseDTO;
+import com.binode.midtermmocktest.model.Course;
 import org.modelmapper.ModelMapper;
-import com.binode.mocktest.service.*;
+import service.CourseService;
 
 import java.util.List;
 import java.util.Optional;

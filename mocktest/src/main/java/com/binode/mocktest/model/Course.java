@@ -1,4 +1,4 @@
-package com.binode.midtermmocktest.model;
+package com.binode.mocktest.model;
 
 import jakarta.persistence.*;
 import java.util.List;

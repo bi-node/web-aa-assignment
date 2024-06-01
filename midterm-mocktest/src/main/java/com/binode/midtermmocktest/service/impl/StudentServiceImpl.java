@@ -1,4 +1,4 @@
-package service;
+package service.impl;
 
 import com.binode.midtermmocktest.Repository.StudentRepository;
 import com.binode.midtermmocktest.dto.CourseDTO;
@@ -9,26 +9,29 @@ import com.binode.midtermmocktest.model.Student;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import service.StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
-public class StudentService {
-    @Autowired
+public class StudentServiceImpl implements StudentService {
+
     StudentRepository studentRepository;
-    @Autowired
     ModelMapper modelMapper;
 
+    @Autowired
+    public StudentServiceImpl(StudentRepository studentRepository, ModelMapper modelMapper) {
+        this.studentRepository = studentRepository;
+        this.modelMapper = modelMapper;
+    }
 
     public List<StudentDTO> getAllStudents() {
-        List<Student> students = studentRepository.findAll();
-        List<StudentDTO> studentDTOs = new ArrayList<>();
-        for (Student student : students) {
-            studentDTOs.add(modelMapper.map(student, StudentDTO.class));
-        }
+        return studentRepository.findAll().stream().
+                map(student -> modelMapper.map(student,StudentDTO.class)).collect(Collectors.toList());
 
-        return studentDTOs;
+
     }
 
     public StudentDTO getStudentById(long id) {
@@ -36,13 +39,17 @@ public class StudentService {
        return modelMapper.map(student, StudentDTO.class);
     }
 
-    public void DeleteStudentById(long id) {
-        studentRepository.deleteById(id);
-    }
 
-    public void saveStudent(StudentDTO studentDTO) {
+    public void addStudent(StudentDTO studentDTO) {
         Student student=modelMapper.map(studentDTO, Student.class);
         studentRepository.save(student);
+    }
+
+
+
+    @Override
+    public void deleteStudentById(long id) {
+        studentRepository.deleteById(id);
     }
 
     public void updateStudent(StudentDTO studentDTO) {
