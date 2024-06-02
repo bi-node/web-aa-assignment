@@ -2,42 +2,53 @@ package com.binode.lab4.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
+@Table(name="logger")
 public class Logger {
-//    Transaction Id, Date, Time, Principle, Operation
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private LocalDateTime datetime;
+    private Long transactionId;
+
+    private LocalDate date;
+    private LocalTime time;
     private String principle;
     private String operation;
 
-    public Logger() {
-    }
-
-    public Logger(LocalDateTime datetime, String principle, String operation) {
-        this.datetime = datetime;
+    public Logger(Long transactionId, LocalDate date, LocalTime time, String principle, String operation) {
+        this.transactionId = transactionId;
+        this.date = date;
+        this.time = time;
         this.principle = principle;
         this.operation = operation;
     }
+    public Logger() {}
 
-    public long getId() {
-        return id;
+    public Long getTransactionId() {
+        return transactionId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
     }
 
-    public LocalDateTime getDatetime() {
-        return datetime;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDatetime(LocalDateTime datetime) {
-        this.datetime = datetime;
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
     }
 
     public String getPrinciple() {
@@ -55,4 +66,6 @@ public class Logger {
     public void setOperation(String operation) {
         this.operation = operation;
     }
+
+    // Getters and setters
 }

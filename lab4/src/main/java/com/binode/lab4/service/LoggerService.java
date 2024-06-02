@@ -1,6 +1,9 @@
 package com.binode.lab4.service;
 
-public interface LoggerService {
-    public void logOperation(String operation);
+import java.time.LocalDateTime;
 
+public interface LoggerService {
+
+
+    void logOperation(String transactionId, String dateTime, String principle, String operation);
 }
