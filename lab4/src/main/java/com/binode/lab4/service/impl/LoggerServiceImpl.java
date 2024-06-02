@@ -6,6 +6,9 @@ import com.binode.lab4.service.LoggerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Service
 public class LoggerServiceImpl implements LoggerService {
 
@@ -17,8 +20,12 @@ public class LoggerServiceImpl implements LoggerService {
     }
 
     @Override
-    public void logOperation(String transactionId, String dateTime, String principle, String operation) {
-        Logger logger = new Logger(transactionId, dateTime, principle, operation);
-        loggerRepository.save(logger);
+    public void logOperation(String  operation) {
+        Logger logEntry = new Logger();
+        logEntry.setDate(LocalDate.now());
+        logEntry.setTime(LocalTime.now());
+        logEntry.setPrinciple("StaticUser");
+        logEntry.setOperation(operation);
+        loggerRepository.save(logEntry);
     }
 }

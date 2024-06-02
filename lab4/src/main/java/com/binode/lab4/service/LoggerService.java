@@ -5,5 +5,5 @@ import java.time.LocalDateTime;
 public interface LoggerService {
 
 
-    void logOperation(String transactionId, String dateTime, String principle, String operation);
+    void logOperation(String operation);
 }
