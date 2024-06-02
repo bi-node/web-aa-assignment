@@ -1,6 +1,8 @@
 package com.binode.lab4.service.impl;
 
+import com.binode.lab4.model.Exception;
 import com.binode.lab4.model.Logger;
+import com.binode.lab4.repository.ExceptionRepository;
 import com.binode.lab4.repository.LoggerRepository;
 import com.binode.lab4.service.LoggerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,12 @@ import java.time.LocalTime;
 public class LoggerServiceImpl implements LoggerService {
 
     private final LoggerRepository loggerRepository;
+    private final ExceptionRepository exceptionRepository;
 
     @Autowired
-    public LoggerServiceImpl(LoggerRepository loggerRepository) {
+    public LoggerServiceImpl(LoggerRepository loggerRepository, ExceptionRepository exceptionRepository) {
         this.loggerRepository = loggerRepository;
+        this.exceptionRepository = exceptionRepository;
     }
 
     @Override
@@ -28,4 +32,19 @@ public class LoggerServiceImpl implements LoggerService {
         logEntry.setOperation(operation);
         loggerRepository.save(logEntry);
     }
+
+    @Override
+    public void logException(String operation, String exceptionType) {
+        Exception logException = new Exception();
+        logException.setDate(LocalDate.now());
+        logException.setTime(LocalTime.now());
+        logException.setPrinciple("StaticUser");
+        logException.setOperation(operation);
+        logException.setExceptionType(exceptionType);
+
+        exceptionRepository.save(logException);
+
+
+    }
+
 }

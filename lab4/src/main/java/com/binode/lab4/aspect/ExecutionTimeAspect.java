@@ -6,8 +6,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 
 @Aspect
 @Component
@@ -22,8 +21,8 @@ public class ExecutionTimeAspect {
         Object proceed = joinPoint.proceed();
         long executionTime = System.currentTimeMillis() - start;
 
-        String operation = joinPoint.getSignature() + " executed in " + executionTime + "ms";
-        System.out.println(operation);
+        String operation = joinPoint.getSignature().getName() + " executed in " + executionTime + "ms";
+        //System.out.println(operation);
 
         loggerService.logOperation(operation);
 

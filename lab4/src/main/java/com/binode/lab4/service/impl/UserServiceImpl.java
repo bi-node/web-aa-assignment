@@ -116,5 +116,12 @@ public class UserServiceImpl implements UserService {
         return usersDtoList;
     }
 
+    @Override
+    public void methodThatThrowsException() {
+        throw new RuntimeException("This is a test exception");
+
+
+    }
+
 
 }

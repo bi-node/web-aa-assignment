@@ -68,4 +68,9 @@ public class UserController {
 
     }
 
+    @GetMapping("/exception")
+    public void testException() {
+        userService.methodThatThrowsException();
+    }
+
 }

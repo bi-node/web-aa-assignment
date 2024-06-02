@@ -15,5 +15,5 @@ public interface UserService {
     public void deleteUser(long id);
     public List<UserDto> userWithNPosts(int n);
     public List<UserDto> userWithTitlePost(String title);
-
+    public void methodThatThrowsException();
 }
