@@ -1,9 +1,9 @@
-package com.binode.lab4.service.impl;
+package com.binode.lab5.service.impl;
 
-import com.binode.lab4.dto.PostDto;
-import com.binode.lab4.entity.Post;
-import com.binode.lab4.repository.PostRepository;
-import com.binode.lab4.service.PostService;
+import com.binode.lab5.dto.PostDto;
+import com.binode.lab5.entity.Post;
+import com.binode.lab5.repository.PostRepository;
+import com.binode.lab5.service.PostService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.binode.lab4;
+package com.binode.lab5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

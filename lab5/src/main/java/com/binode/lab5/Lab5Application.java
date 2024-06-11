@@ -1,4 +1,4 @@
-package com.binode.lab4;
+package com.binode.lab5;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

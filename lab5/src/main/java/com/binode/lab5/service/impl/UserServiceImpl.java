@@ -1,14 +1,14 @@
-package com.binode.lab4.service.impl;
+package com.binode.lab5.service.impl;
 
 
-import com.binode.lab4.dto.PostDto;
-import com.binode.lab4.dto.UserDto;
+import com.binode.lab5.dto.PostDto;
+import com.binode.lab5.dto.UserDto;
 
-import com.binode.lab4.entity.Post;
-import com.binode.lab4.entity.User;
-import com.binode.lab4.repository.PostRepository;
-import com.binode.lab4.repository.UserRepository;
-import com.binode.lab4.service.UserService;
+import com.binode.lab5.entity.Post;
+import com.binode.lab5.entity.User;
+import com.binode.lab5.repository.PostRepository;
+import com.binode.lab5.repository.UserRepository;
+import com.binode.lab5.service.UserService;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

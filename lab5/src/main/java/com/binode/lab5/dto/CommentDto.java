@@ -1,4 +1,4 @@
-package com.binode.lab4.dto;
+package com.binode.lab5.dto;
 
 public class CommentDto {
     long id;

@@ -1,6 +1,6 @@
-package com.binode.lab4.service;
+package com.binode.lab5.service;
 
-import com.binode.lab4.dto.PostDto;
+import com.binode.lab5.dto.PostDto;
 
 import java.util.List;
 

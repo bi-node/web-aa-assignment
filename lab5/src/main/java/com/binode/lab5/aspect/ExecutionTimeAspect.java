@@ -1,5 +1,5 @@
-package com.binode.lab4.aspect;
-import com.binode.lab4.service.LoggerService;
+package com.binode.lab5.aspect;
+import com.binode.lab5.service.LoggerService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

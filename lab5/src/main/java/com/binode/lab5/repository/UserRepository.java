@@ -1,6 +1,6 @@
-package com.binode.lab4.repository;
+package com.binode.lab5.repository;
 
-import com.binode.lab4.entity.User;
+import com.binode.lab5.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

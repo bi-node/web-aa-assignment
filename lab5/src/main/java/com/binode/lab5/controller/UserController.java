@@ -1,9 +1,9 @@
-package com.binode.lab4.controller;
+package com.binode.lab5.controller;
 
-import com.binode.lab4.aspect.ExecutionTime;
-import com.binode.lab4.dto.PostDto;
-import com.binode.lab4.dto.UserDto;
-import com.binode.lab4.service.UserService;
+import com.binode.lab5.aspect.ExecutionTime;
+import com.binode.lab5.dto.PostDto;
+import com.binode.lab5.dto.UserDto;
+import com.binode.lab5.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

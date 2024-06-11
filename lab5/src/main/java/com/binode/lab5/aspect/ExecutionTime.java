@@ -1,4 +1,4 @@
-package com.binode.lab4.aspect;
+package com.binode.lab5.aspect;
 
 
 import java.lang.annotation.ElementType;

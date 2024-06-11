@@ -1,10 +1,10 @@
-package com.binode.lab4.service.impl;
+package com.binode.lab5.service.impl;
 
-import com.binode.lab4.entity.Exception;
-import com.binode.lab4.entity.Logger;
-import com.binode.lab4.repository.ExceptionRepository;
-import com.binode.lab4.repository.LoggerRepository;
-import com.binode.lab4.service.LoggerService;
+import com.binode.lab5.entity.Exception;
+import com.binode.lab5.entity.Logger;
+import com.binode.lab5.repository.ExceptionRepository;
+import com.binode.lab5.repository.LoggerRepository;
+import com.binode.lab5.service.LoggerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.binode.lab4.modelmapper;
+package com.binode.lab5.modelmapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

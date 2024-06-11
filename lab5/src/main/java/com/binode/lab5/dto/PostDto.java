@@ -1,6 +1,6 @@
-package com.binode.lab4.dto;
+package com.binode.lab5.dto;
 
-import com.binode.lab4.entity.Comment;
+import com.binode.lab5.entity.Comment;
 
 import java.util.List;
 

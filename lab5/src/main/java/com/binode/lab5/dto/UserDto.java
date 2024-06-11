@@ -1,6 +1,6 @@
-package com.binode.lab4.dto;
+package com.binode.lab5.dto;
 
-import com.binode.lab4.entity.Post;
+import com.binode.lab5.entity.Post;
 
 import java.util.List;
 

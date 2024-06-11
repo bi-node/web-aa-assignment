@@ -1,6 +1,6 @@
-package com.binode.lab4.controller;
-import com.binode.lab4.dto.PostDto;
-import com.binode.lab4.service.PostService;
+package com.binode.lab5.controller;
+import com.binode.lab5.dto.PostDto;
+import com.binode.lab5.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

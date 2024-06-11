@@ -1,6 +1,4 @@
-package com.binode.lab4.service;
-
-import java.time.LocalDateTime;
+package com.binode.lab5.service;
 
 public interface LoggerService {
 
