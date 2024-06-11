@@ -1,0 +1,87 @@
+/* src/components/styles.css */
+
+:root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --post-background-color: #1e1e1e;
+    --post-border-color: #333;
+    --button-background-color: #6200ea;
+    --button-text-color: #ffffff;
+    --input-background-color: #1e1e1e;
+    --input-border-color: #333;
+    --input-text-color: #ffffff;
+    --input-focus-border-color: #6200ea;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+.post-c {
+    border: 1px solid var(--post-border-color);
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    width: 200px; /* Set a fixed width for each post box */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    background-color: var(--post-background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.inputContainer {
+    margin-bottom: 20px;
+    text-align: center; /* Center the input and button */
+}
+
+.postDetailContainer {
+    border: 1px solid var(--post-border-color);
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    background-color: var(--post-background-color);
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.postsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allow posts to wrap to the next line if needed */
+    gap: 10px; /* Add spacing between posts */
+    justify-content: center; /* Center the posts horizontally */
+    align-items: center; /* Center the posts vertically if there is extra space */
+    padding: 20px;
+}
+
+button {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input {
+    background-color: var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    color: var(--input-text-color);
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--input-focus-border-color);
+}
