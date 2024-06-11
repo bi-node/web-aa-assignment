@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import PostService from "./PostService";
 import Posts from "./Posts";
+import AddPost from "./AddPost";
 import "./styles.css";
 
 const Dashboard = () => {
@@ -25,6 +26,10 @@ const Dashboard = () => {
         setPosts(updatedPosts);
     };
 
+    const handlePostAdded = (newPost) => {
+        setPosts([...posts, newPost]);
+    };
+
     return (
         <div>
             <div className="inputContainer">
@@ -36,6 +41,7 @@ const Dashboard = () => {
                 />
                 <button onClick={updateTitle}>Update Title</button>
             </div>
+            <AddPost onPostAdded={handlePostAdded} />
             <Posts posts={posts} />
         </div>
     );
