@@ -1,35 +1,24 @@
-package com.binode.lab4.model;
+package com.binode.lab4.dto;
 
-import jakarta.persistence.*;
+import com.binode.lab4.entity.Comment;
 
 import java.util.List;
 
-@Entity
-@Table(name="posts")
-public class Post {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
-    String title;
-    String content;
-    String author;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @JoinColumn(name="post_id")
-    List<Comment>  comment;
-
-   // @Column(name = "user_id")
-    private Long user_id;
-
-
-    public Post(){}
-    public Post(long id, String title, String content, String author, List<Comment> comment) {
+public class PostDto {
+    private long id;
+    private String title;
+    private String content;
+    private String author;
+    private List<Comment> comment;
+    public PostDto(){}
+    public PostDto(long id,String title, String content, String author, List<Comment> comment) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
         this.comment = comment;
-    }
 
+    }
 
     public long getId() {
         return id;
@@ -69,15 +58,5 @@ public class Post {
 
     public void setComment(List<Comment> comment) {
         this.comment = comment;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", author='" + author + '\'' +
-                '}';
     }
 }

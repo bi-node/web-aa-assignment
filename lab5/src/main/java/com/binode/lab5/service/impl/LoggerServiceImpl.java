@@ -1,7 +1,7 @@
 package com.binode.lab4.service.impl;
 
-import com.binode.lab4.model.Exception;
-import com.binode.lab4.model.Logger;
+import com.binode.lab4.entity.Exception;
+import com.binode.lab4.entity.Logger;
 import com.binode.lab4.repository.ExceptionRepository;
 import com.binode.lab4.repository.LoggerRepository;
 import com.binode.lab4.service.LoggerService;

@@ -4,8 +4,8 @@ package com.binode.lab4.service.impl;
 import com.binode.lab4.dto.PostDto;
 import com.binode.lab4.dto.UserDto;
 
-import com.binode.lab4.model.Post;
-import com.binode.lab4.model.User;
+import com.binode.lab4.entity.Post;
+import com.binode.lab4.entity.User;
 import com.binode.lab4.repository.PostRepository;
 import com.binode.lab4.repository.UserRepository;
 import com.binode.lab4.service.UserService;

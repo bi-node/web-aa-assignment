@@ -1,31 +1,36 @@
-package com.binode.lab4.model;
+package com.binode.lab4.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name="logger")
-public class Logger {
+public class Exception {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;
 
     private LocalDate date;
     private LocalTime time;
     private String principle;
     private String operation;
+    private String exceptionType;
 
-    public Logger(Long transactionId, LocalDate date, LocalTime time, String principle, String operation) {
-        this.transactionId = transactionId;
+    // Constructors, getters, and setters
+    public Exception() {}
+
+    public Exception(LocalDate date, LocalTime time, String principle, String operation, String exceptionType) {
         this.date = date;
         this.time = time;
         this.principle = principle;
         this.operation = operation;
+        this.exceptionType = exceptionType;
     }
-    public Logger() {}
 
     public Long getTransactionId() {
         return transactionId;
@@ -67,5 +72,11 @@ public class Logger {
         this.operation = operation;
     }
 
-    // Getters and setters
+    public String getExceptionType() {
+        return exceptionType;
+    }
+
+    public void setExceptionType(String exceptionType) {
+        this.exceptionType = exceptionType;
+    }
 }

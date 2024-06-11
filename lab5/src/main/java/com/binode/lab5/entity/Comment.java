@@ -1,4 +1,4 @@
-package com.binode.lab4.model;
+package com.binode.lab4.entity;
 
 import jakarta.persistence.*;
 

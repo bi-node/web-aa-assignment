@@ -1,7 +1,7 @@
 package com.binode.lab4.service.impl;
 
 import com.binode.lab4.dto.PostDto;
-import com.binode.lab4.model.Post;
+import com.binode.lab4.entity.Post;
 import com.binode.lab4.repository.PostRepository;
 import com.binode.lab4.service.PostService;
 import org.modelmapper.ModelMapper;

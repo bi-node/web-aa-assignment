@@ -1,4 +1,4 @@
-package com.binode.lab4.model;
+package com.binode.lab4.entity;
 
 import jakarta.persistence.*;
 
@@ -14,6 +14,8 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     List<Post> posts ;
+
+
 
 
 
