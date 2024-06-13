@@ -1,29 +1,50 @@
 // src/services/PostService.js
-import axios from "axios";
+import axios from 'axios';
 
-const BASE_URL = "http://localhost:9900/posts";
-
-const fetchPosts = async () => {
-    try {
-        const response = await axios.get(BASE_URL);
-        return response.data;
-    } catch (error) {
-        console.error("Error fetching posts:", error);
-        return [];
+class PostService {
+    constructor() {
+        this.baseUrl = 'http://localhost:9900';
     }
-};
 
-const addPost = async (post) => {
-    try {
-        const response = await axios.post(BASE_URL, post);
-        return response.data;
-    } catch (error) {
-        console.error("Error adding post:", error);
-        return null;
+    async fetchPosts() {
+        try {
+            const response = await axios.get(`${this.baseUrl}/posts`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            return [];
+        }
     }
-};
 
-export default {
-    fetchPosts,
-    addPost,
-};
+    async fetchPostById(postId) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/posts/${postId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching post by ID:', error);
+            return null;
+        }
+    }
+
+    async fetchCommentsByPostId(postId) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/posts/${postId}/comments`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching comments by post ID:', error);
+            return [];
+        }
+    }
+
+    async addPost(post) {
+        try {
+            const response = await axios.post(`${this.baseUrl}/posts`, post);
+            return response.data;
+        } catch (error) {
+            console.error('Error adding post:', error);
+            return null;
+        }
+    }
+}
+
+export default new PostService();

@@ -49,6 +49,7 @@ body {
     margin: 10px;
     position: relative;
     background-color: var(--post-background-color);
+    flex-grow: 1;
 }
 
 .closeButton {
@@ -63,8 +64,23 @@ body {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
+}
+
+.postsList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.postDetails {
+    flex-grow: 1;
+    min-width: 300px;
+    margin-left: 20px;
 }
 
 button {
@@ -106,4 +122,11 @@ textarea:focus {
     background-color: var(--post-background-color);
     border: 1px solid var(--post-border-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.comment {
+    background-color: var(--post-background-color);
+    border: 1px solid var(--post-border-color);
+    padding: 10px;
+    margin: 10px 0;
 }
