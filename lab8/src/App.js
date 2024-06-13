@@ -1,13 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import Dashboard from './components/Dashboard';
+import React from 'react';
+import Dashboard from '../src/components/Dashboard';
+import { PostProvider } from '../src/context/PostContext';
+
+
 
 function App() {
-  return (
-    <div className="App">
-     <Dashboard />
-    </div>
-  );
+    return (
+        <PostProvider>
+            <Dashboard />
+        </PostProvider>
+    );
 }
 
 export default App;

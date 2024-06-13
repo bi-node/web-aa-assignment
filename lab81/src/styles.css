@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Facebook background color */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #3b5998; /* Facebook Blue */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* AddPost Component Styles */
+.add-post {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-post input,
+.add-post textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+}
+
+.add-post button {
+    padding: 10px 20px;
+    background-color: #3b5998; /* Facebook Blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-post button:hover {
+    background-color: #2d4373; /* Darker shade of Facebook Blue */
+}
+
+.add-post button:disabled {
+    background-color: #9cb4d8; /* Lighter shade of Facebook Blue */
+    cursor: not-allowed;
+}
+
+.add-post button:disabled:hover {
+    background-color: #9cb4d8;
+}
+
+/* Posts Component Styles */
+.posts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Post Component Styles */
+.post {
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px);
+    max-width: 400px;
+}
+
+.post .post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.post .post-header-user {
+    display: flex;
+    align-items: center;
+}
+
+.post .post-header-user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post .post-content {
+    margin-bottom: 10px;
+}
+
+.post .post-comments {
+    margin-bottom: 10px;
+}
+
+.post .post-comments .comment {
+    background-color: #f0f2f5; /* Lighter shade of Facebook background color */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border: 1px solid #dddfe2;
+}
+
+.post .post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post .post-actions button {
+    padding: 8px 16px;
+    background-color: #f0f2f5; /* Facebook background color */
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.post .post-actions button:hover {
+    background-color: #e4e6eb; /* Lighter shade of Facebook background color */
+}

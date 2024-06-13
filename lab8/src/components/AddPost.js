@@ -1,32 +1,34 @@
-// src/components/AddPost.js
-import React, { useRef } from "react";
-import PostService from "./PostService";
-import "./styles.css";
+import React, { useContext, useRef } from 'react';
+import PostService from '../services/PostService';
+import { PostContext } from '../context/PostContext';
 
-const AddPost = ({ onPostAdded }) => {
-    const titleRef = useRef(null);
-    const authorRef = useRef(null);
-    const descriptionRef = useRef(null);
+const AddPost = () => {
+    const { posts, setPosts } = useContext(PostContext);
+    const titleRef = useRef();
+    const authorRef = useRef();
+    const commentRef = useRef();
 
-    const handleSubmit = async (e) => {
+    const handleAddPost = async (e) => {
         e.preventDefault();
         const newPost = {
             title: titleRef.current.value,
             author: authorRef.current.value,
-            description: descriptionRef.current.value,
+            comment: [{ name: commentRef.current.value }]
         };
         const addedPost = await PostService.addPost(newPost);
-        onPostAdded(addedPost);
-        titleRef.current.value = "";
-        authorRef.current.value = "";
-        descriptionRef.current.value = "";
+        if (addedPost) {
+            setPosts([...posts, addedPost]);
+        }
+        titleRef.current.value = '';
+        authorRef.current.value = '';
+        commentRef.current.value = '';
     };
 
     return (
-        <form className="addPostForm" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Title" ref={titleRef} required />
-            <input type="text" placeholder="Author" ref={authorRef} required />
-            <textarea placeholder="Description" ref={descriptionRef} required></textarea>
+        <form onSubmit={handleAddPost}>
+            <input ref={titleRef} type="text" placeholder="Title" required />
+            <input ref={authorRef} type="text" placeholder="Author" required />
+            <input ref={commentRef} type="text" placeholder="Comment" required />
             <button type="submit">Add Post</button>
         </form>
     );

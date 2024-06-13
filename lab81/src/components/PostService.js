@@ -16,13 +16,21 @@ class PostService {
         }
     }
 
-    async fetchPostById(postId) {
+    async addPost(post) {
         try {
-            const response = await axios.get(`${this.baseUrl}/posts/${postId}`);
+            const response = await axios.post(`${this.baseUrl}/posts`, post);
             return response.data;
         } catch (error) {
-            console.error('Error fetching post by ID:', error);
-            return null;
+            console.error('Error adding post:', error);
+        }
+    }
+
+    async fetchPostById(id) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/posts/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching post:', error);
         }
     }
 
@@ -31,18 +39,16 @@ class PostService {
             const response = await axios.get(`${this.baseUrl}/posts/${postId}/comments`);
             return response.data;
         } catch (error) {
-            console.error('Error fetching comments by post ID:', error);
-            return [];
+            console.error(`Error fetching comments for post ${postId}:`, error);
         }
     }
 
-    async addPost(post) {
+    async addComment(postId, comment) {
         try {
-            const response = await axios.post(`${this.baseUrl}/posts`, post);
+            const response = await axios.post(`${this.baseUrl}/posts/${postId}/comments`, comment);
             return response.data;
         } catch (error) {
-            console.error('Error adding post:', error);
-            return null;
+            console.error(`Error adding comment to post ${postId}:`, error);
         }
     }
 }

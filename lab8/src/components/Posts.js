@@ -1,33 +1,31 @@
-// src/components/Posts.js
-import React, { useContext } from 'react';
-import { SelectedPostContext } from './SelectedPostContext ';
+import React, { useContext, useEffect } from 'react';
+import PostService from '../services/PostService';
 import Post from './Post';
-import PostDetails from './PostDetails';
-import './styles.css';
+import { PostContext } from '../context/PostContext';
 
-const Posts = ({ posts }) => {
-    const { selectedPostId, setSelectedPostId } = useContext(SelectedPostContext);
+const Posts = () => {
+    const { posts, setPosts, setSelectedPostId } = useContext(PostContext);
 
-    const readPost = (postId) => {
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const fetchedPosts = await PostService.fetchPosts();
+            setPosts(fetchedPosts);
+        };
+
+        fetchPosts();
+    }, [setPosts]);
+
+    const handlePostClick = (postId) => {
         setSelectedPostId(postId);
     };
 
     return (
-        <div className="postsContainer">
-            <div className="postsList">
-                {posts.map((post) => (
-                    <div key={"post_" + post.id}>
-                        <Post
-                            post={post}
-                            readPost={() => readPost(post.id)}
-                            isSelected={post.id === selectedPostId}
-                        />
-                    </div>
-                ))}
-            </div>
-            <div className="postDetails">
-                {selectedPostId && <PostDetails />}
-            </div>
+        <div className="posts-container">
+            {posts.map((post) => (
+                <div key={post.id} onClick={() => handlePostClick(post.id)}>
+                    <Post post={post} />
+                </div>
+            ))}
         </div>
     );
 };

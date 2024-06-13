@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState, useMemo } from 'react';
 import { SelectedPostContext } from './SelectedPostContext ';
 import PostService from './PostService';
 import Comment from './Comment';
+import AddComment from './AddComment';
 import './styles.css';
 
 const PostDetails = () => {
@@ -15,40 +16,30 @@ const PostDetails = () => {
             if (selectedPostId !== null) {
                 const postDetails = await PostService.fetchPostById(selectedPostId);
                 setPost(postDetails);
-            }
-        };
-
-        fetchPostDetails();
-    }, [selectedPostId]);
-
-    useEffect(() => {
-        const fetchComments = async () => {
-            if (selectedPostId !== null) {
                 const postComments = await PostService.fetchCommentsByPostId(selectedPostId);
                 setComments(postComments);
             }
         };
-
-        fetchComments();
+        fetchPostDetails();
     }, [selectedPostId]);
 
-    const memoizedComments = useMemo(() => {
-        return comments.map((comment) => (
-            <Comment key={comment.id} comment={comment} />
+    const renderedComments = useMemo(() => {
+        if (!comments) return null; // Check if comments is null or undefined
+        return comments.map((comment, index) => (
+            <Comment key={index} comment={comment} />
         ));
     }, [comments]);
 
-    if (!post) {
-        return null;
-    }
+    if (!post) return null;
 
     return (
-        <div className="postDetailContainer">
+        <div className="post-details">
             <h3>{post.title}</h3>
-            <div>{post.author}</div>
-            <div>{post.description}</div>
-            <h4>Comments</h4>
-            {memoizedComments}
+            <div>Author: {post.author}</div>
+            <div className="comments-section">
+                {renderedComments}
+            </div>
+            <AddComment />
         </div>
     );
 };

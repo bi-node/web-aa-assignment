@@ -1,13 +1,16 @@
-// src/components/Post.js
 import React from 'react';
 import './styles.css';
 
-const Post = ({ post, readPost, isSelected }) => {
+const Post = ({ post }) => {
     return (
-        <div className={`post-c ${isSelected ? 'selected' : ''}`} onClick={readPost}>
+        <div className="post-c">
             <h4>Title: {post.title}</h4>
             <p>Author: {post.author}</p>
-            <p>Description: {post.description}</p>
+            {post.comment && post.comment.map((c, index) => (
+                <div key={index} className="comment">
+                    {c.name}
+                </div>
+            ))}
         </div>
     );
 };

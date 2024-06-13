@@ -1,9 +1,8 @@
 // src/components/Dashboard.js
 import React, { useEffect, useState } from "react";
-import PostService from "./PostService";
+import PostService from "../services/PostService";
 import Posts from "./Posts";
 import AddPost from "./AddPost";
-import { SelectedPostProvider } from "./SelectedPostContext ";
 import "./styles.css";
 
 const Dashboard = () => {
@@ -32,7 +31,7 @@ const Dashboard = () => {
     };
 
     return (
-        <SelectedPostProvider>
+        <div>
             <div className="inputContainer">
                 <input
                     name="post-title"
@@ -44,7 +43,7 @@ const Dashboard = () => {
             </div>
             <AddPost onPostAdded={handlePostAdded} />
             <Posts posts={posts} />
-        </SelectedPostProvider>
+        </div>
     );
 };
 
