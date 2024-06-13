@@ -7,7 +7,7 @@ const Post = ({ post, readPost, isSelected }) => {
         <div className={`post-c ${isSelected ? 'selected' : ''}`} onClick={readPost}>
             <h4>Title: {post.title}</h4>
             <p>Author: {post.author}</p>
-            <p>Description: {post.comment}</p>
+            <p>Description: {post.description}</p>
         </div>
     );
 };
